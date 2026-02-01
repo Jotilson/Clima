@@ -54,7 +54,7 @@ fieldset{
     margin: auto;
     display: grid;
     gap: 5px;
-    grid-template-columns: auto auto ;
+    grid-template-columns: auto auto  ;
     grid-template-rows: 90px 90px ;
     justify-content:space-between;
     justify-items: center;
@@ -69,3 +69,11 @@ button{
     color: white;
     width: 20%;
 }
+@media screen and (min-width:768px) {
+     fieldset{
+        grid-template-columns: auto auto auto ;
+    grid-template-rows: 90px 90px 90px ;
+    }
+    
+}
+ 
