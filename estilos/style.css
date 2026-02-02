@@ -4,11 +4,42 @@
     margin: 0px;
     padding: 0px;
 }
+
 body{
     font-family: Arial, Helvetica, sans-serif;
      
  }
+ #Capa{
+    width: 50%;
+    height: 50vh;
+    background-color: rgba(253, 253, 104, 0.848);
+    position: absolute;
+   display: none;
+   box-shadow: 2px 2px 4px rgb(26, 29, 214);
+    z-index: 1;
+ }
+#Contracapa{
+    
+    width: 99%;
+   height: 50vh;
+   background-color: rgb(55, 55, 245);
+   display: block;
+   margin: auto;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: space-around;
+  font-size: smaller;
 
+}
+#Contracapa div{
+    display: flex;
+    justify-content: space-between;
+}
+ a{
+    color: white;
+    text-decoration: none;
+    
+ }
 header{
    background-image: linear-gradient(to bottom, rgb(21, 75, 235),rgb(0, 102, 255));
    padding: 10px;
@@ -22,6 +53,13 @@ header{
     justify-content: flex-end;
     align-items: flex-start;
   transition: img 1.5s ease-in 1.5s;
+}
+#menu{
+     display: flex;
+    justify-content: flex-end;
+   flex-direction: row;
+   align-content: flex-start;
+   cursor: pointer;
 }
 
 h1{
@@ -73,7 +111,7 @@ button{
     color: white;
     width: 20%;
     font-size: 18px;
-    cursor: pointer;
+      cursor: pointer;
 }
 @media screen and (min-width:768px) {
      fieldset{
@@ -87,7 +125,7 @@ button{
     div{
         align-items: center;
     }
-    
+   
 }
  @media screen and (min-width:1300px) {
      fieldset{
