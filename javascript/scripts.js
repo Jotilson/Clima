@@ -35,17 +35,20 @@ btn.addEventListener("click",function(){
        
         const dados= await response.json()
         if(dados.weather[0].icon==="01d"){
+
              document.body.style.backgroundImage="url('imagens/sol.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+       document.body.style.transition='backgroundImage 2s ease-in-out 2s'   
         }else if(dados.weather[0].icon==="01n"){
              document.body.style.backgroundImage="url('imagens/ceunoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+        document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
 
         }else if(dados.weather[0].icon==="02d"){
              document.body.style.backgroundImage="url('imagens/poucasnuvens.jpg')"
@@ -53,107 +56,112 @@ btn.addEventListener("click",function(){
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+        document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="02n"){
             document.body.style.backgroundImage="url('imagens/poucasnuvensnoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+        document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="03d"){
             document.body.style.backgroundImage="url('imagens/nuvens.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+        document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="03n"){
               document.body.style.backgroundImage="url('imagens/nuvensnoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+        document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="04d"){
             document.body.style.backgroundImage="url('imagens/muitanuvem.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="04n"){
             document.body.style.backgroundImage="url('imagens/muitanuvemnoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="09d"){
             document.body.style.backgroundImage="url('imagens/chuvaforte.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="09n"){
             document.body.style.backgroundImage="url('imagens/chuvafortenoite.jfif')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="10d"){
             document.body.style.backgroundImage="url('imagens/chuva.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="10n"){
             document.body.style.backgroundImage="url('imagens/chuvadenoite.jfif')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="11d"){
              document.body.style.backgroundImage="url('imagens/trovoada.jfif')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="11n"){
              document.body.style.backgroundImage="url('imagens/trovoadanoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="13d"){
              document.body.style.backgroundImage="url('imagens/neve.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="13n"){
  document.body.style.backgroundImage="url('imagens/nevenoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
+        document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="50d"){
     document.body.style.backgroundImage="url('imagens/neblina.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }else if(dados.weather[0].icon==="50n"){
 document.body.style.backgroundImage="url('imagens/neblinanoite.jpg')"
     document.body.style.backgroundPosition='center-center'
      document.body.style.backgroundRepeat='no-repeat'
       document.body.style.backgroundSize='cover'
        document.body.style.backgroundAttachment='fixed'
-
+ document.body.style.transition='backgroundImage 2s ease-in-out 2s'  
         }
        city.innerHTML=dados.name
        pais.innerHTML=dados.sys.country
