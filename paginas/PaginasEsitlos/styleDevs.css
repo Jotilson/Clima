@@ -35,13 +35,18 @@ body{
     display: flex;
     justify-content: space-between;
 }
+.a{
+    color: yellow;
+    text-decoration: overline;
+    font-weight: 900;
+ }
  a{
     color: white;
     text-decoration: none;
-    
+    font-weight: 900;
  }
 header{
-   background-image: linear-gradient(to bottom, rgb(21, 75, 235),rgb(0, 102, 255));
+   background-image: linear-gradient(to bottom, rgb(21, 75, 235),rgb(15, 58, 123));
    padding: 10px;
    color: white;
    margin-bottom: 5%;
@@ -61,10 +66,19 @@ header{
    align-content: flex-start;
    cursor: pointer;
 }
+img{
+    margin-bottom: 2%;
+    box-shadow: 2px 2px 5px black;
+}
+
 
 h1{
     font-weight: 900;
 margin-bottom: 1.5%;
+margin-top: 2%;
+}
+main section p, li{
+    line-height: 2;
 }
 div{
     display: flex;
@@ -79,7 +93,10 @@ div{
 
 }
 main{
+    margin-top: -5%;
     background-image: linear-gradient(to bottom, rgb(0, 98, 255),rgba(0, 0, 255, 0.426));
+     width: 100%;
+   
     
 }
 footer{
