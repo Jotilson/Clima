@@ -87,3 +87,10 @@ main{
    
     
 }
+footer{
+    background-color: rgb(5, 5, 114);
+    color: white;
+    padding: 10px;
+    text-align: center;
+     padding: 20px;
+}
