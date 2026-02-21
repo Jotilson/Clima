@@ -142,6 +142,7 @@ button{
   overflow-x: scroll;
     overflow-y: hidden;
     display: inline-flex;
+    justify-content: space-between;
 }
 .navBar{
     display: flex;
