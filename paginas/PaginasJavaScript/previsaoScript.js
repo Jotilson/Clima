@@ -190,12 +190,17 @@ function DirectionWind(dados){
  const probP=document.getElementById("pp")
  const ChuvaPrevista=document.getElementById("ChvP")
 
+ const btn=document.getElementById("btn")
  //API Rest
- async function PrevisaoClima() {
+
+ btn.addEventListener("click",function(){
+  async function PrevisaoClima() {
  let forecastData=[];
    try {
     //Indo pegar a API
-  const response=await fetch("https://api.openweathermap.org/data/2.5/forecast?q=Lisboa&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt")
+      const cityLook=document.getElementById("nameCity").value.trim()
+  const response=await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+`${cityLook}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt")
+
       if(!response.ok){
           throw new Error("Erro na requisição")
       }
@@ -208,7 +213,8 @@ function DirectionWind(dados){
    let previsao
     const video=document.getElementById("vd")
 
-   document.addEventListener("click",function(e){
+
+  document.addEventListener("click",function(e){
     if(e.target.classList.contains("asid2")){
          const dt=e.target.textContent.trim();
 
@@ -273,4 +279,11 @@ DayRain(dados)
    }
    
  }
- PrevisaoClima()
+  PrevisaoClima()
+
+ 
+ 
+
+ })
+  
+
