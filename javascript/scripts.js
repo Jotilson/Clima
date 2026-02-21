@@ -204,7 +204,9 @@ document.body.style.backgroundImage="url('imagens/neblinanoite.jpg')"
   vt.innerHTML=Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " S"
             }
             nuvem.innerHTML=dados.clouds.all+"%"
+
  nivelMar.innerHTML=Number(dados.main.sea_level)+"hPa"
+ 
  temp.innerHTML=Math.round(dados.main.temp)+"ºC"
  temp_min.innerHTML=dados.main.temp_min+"ºC"
   temp_max.innerHTML=Math.round(dados.main.temp_max)+"ºC"
