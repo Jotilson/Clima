@@ -66,7 +66,7 @@
   return dados.main.sea_level+"hPa"
    }
    //Função que retorna a direção do vento
-function DirectionWind(dados){
+ function DirectionWind(dados){
   if(dados.wind.deg>=202.5 && dados.wind.deg<247.5)
         {
             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " SO"
@@ -77,7 +77,7 @@ function DirectionWind(dados){
             }else if(dados.wind.deg>=157.5 && dados.wind.deg<202.5){
      return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " S"
 
-            }else if(dados.wind.deg>=348.75 && dados.wind.deg<360){
+            }else if(dados.wind.deg>=348.75 && dados.wind.deg<=360){
               return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "N"
 
             }else if(dados.wind.deg>=0 && dados.wind.deg<11.25){
@@ -194,12 +194,24 @@ function DirectionWind(dados){
  //API Rest
 
  btn.addEventListener("click",function(){
-  async function PrevisaoClima() {
+   async function PrevisaoClima() {
  let forecastData=[];
    try {
     //Indo pegar a API
       const cityLook=document.getElementById("nameCity").value.trim()
-  const response=await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+`${cityLook}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt")
+      let response
+      if(cityLook==0){
+        
+        const nova=localStorage.getItem("cidadePrevisao")
+     response=await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+`${nova}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt")
+       const newCity=document.getElementById("nameCity")
+       newCity.value=nova
+      }else{
+
+         response=await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+`${cityLook}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt")
+         localStorage.setItem("cidadePrevisao",cityLook)
+      }
+  
 
       if(!response.ok){
           throw new Error("Erro na requisição")

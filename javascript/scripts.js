@@ -15,15 +15,96 @@ const porSol=document.getElementById("porSol")
 const img=document.getElementById("img")
 const country=document.getElementById("pais")
 
+ function DirectionWind(dados){
+  if(dados.wind.deg>=202.5 && dados.wind.deg<247.5)
+        {
+            return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " SO"
+
+          }else if(dados.wind.deg>=247.5 && dados.wind.deg<292.5){
+               return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " O"
+
+            }else if(dados.wind.deg>=157.5 && dados.wind.deg<202.5){
+     return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " S"
+
+            }else if(dados.wind.deg>=348.75 && dados.wind.deg<=360){
+              return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "N"
+
+            }else if(dados.wind.deg>=0 && dados.wind.deg<11.25){
+              return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "N"
+
+            }else if(dados.wind.deg>=11.25 && dados.wind.deg<33.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "NNE"
+
+            }else if(dados.wind.deg>=33.75 && dados.wind.deg<56.25){
+              return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "NE"
+
+            }else if(dados.wind.deg>=56.25 && dados.wind.deg<78.75){
+            return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "ENE"
+
+            }else if(dados.wind.deg>=78.75 && dados.wind.deg<101.25){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "E"
+
+            }else if(dados.wind.deg>=101.25 && dados.wind.deg<123.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "ESE"
+            }
+            else if(dados.wind.deg>=123.75 && dados.wind.deg<146.25){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "SSE"
+            }
+            else if(dados.wind.deg>=146.25 && dados.wind.deg<168.75){
+              return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "SSE"
+            }
+            else if(dados.wind.deg>=168.75 && dados.wind.deg<191.25){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "S"
+            }
+            else if(dados.wind.deg>=191.25 && dados.wind.deg<213.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "SSW"
+            }
+            else if(dados.wind.deg>=213.75 && dados.wind.deg<236.25){
+            return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "SW"
+            }
+            else if(dados.wind.deg>=236.25 && dados.wind.deg<258.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "WSW"
+            }
+            else if(dados.wind.deg>=258.75 && dados.wind.deg<281.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "W"
+            }
+            else if(dados.wind.deg>=281.75 && dados.wind.deg<303.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "WNW"
+            }
+            else if(dados.wind.deg>=303.75 && dados.wind.deg<326.25){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "NW"
+            }
+            else if(dados.wind.deg>=326.25 && dados.wind.deg<348.75){
+             return Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ "NNW"
+            }
+
+ 
+ }
+
 
 const btn=document.getElementById("btnBuscar")
 
 btn.addEventListener("click",function(){
 
     async function Clima() {
+        let url
         const cityLook=document.getElementById("nameCity").value.trim()
-    const url="https://api.openweathermap.org/data/2.5/weather?q="+`${cityLook}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt"
+        if(cityLook==0){
+            
+          
+       const nova= localStorage.getItem("cidade")
+        const city=document.getElementById("nameCity")
+        city.value=nova
+     url="https://api.openweathermap.org/data/2.5/weather?q="+`${nova}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt"
     console.log(url)
+        }else{
+             const cityLookk=document.getElementById("nameCity").value.trim()
+             url="https://api.openweathermap.org/data/2.5/weather?q="+`${cityLookk}`+"&appid=d2d62f7975863098cbd673c8d4c6639b&units=metric&lang=pt"
+    console.log(url)
+    localStorage.setItem("cidade",cityLook)
+        }
+       
+   
     
     try {
         const response = await fetch(url)
@@ -196,13 +277,8 @@ document.body.style.backgroundImage="url('imagens/neblinanoite.jpg')"
        pressao.innerHTML=Math.round(Number(dados.main.pressure)/10)*10+"hPa"
        vs.innerHTML=Math.round(Number(dados.visibility)/1000)+"km"
        
-       if(dados.wind.deg>=202.5 && dados.wind.deg<247.5)
-        {
-            vt.innerHTML=Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " SO"}else if(dados.wind.deg>=247.5 && dados.wind.deg<292.5){
-                vt.innerHTML=Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " O"
-            }else if(dados.wind.deg>=157.5 && dados.wind.deg<202.5){
-  vt.innerHTML=Math.floor(Number(dados.wind.speed)*2.24)+"mph "+ " S"
-            }
+            vt.innerHTML=DirectionWind(dados)
+
             nuvem.innerHTML=dados.clouds.all+"%"
 
  nivelMar.innerHTML=Number(dados.main.sea_level)+"hPa"
